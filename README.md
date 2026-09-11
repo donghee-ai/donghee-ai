@@ -125,7 +125,7 @@ The driver and link logic can also be tested on a PC with the included simulator
 
 ## Core toolkit
 
-| | |
+| Area | Tools |
 |:--|:--|
 | **Languages** | Python · C · C++ · TypeScript · Shell |
 | **Robotics & AI** | ROS 2 · PyTorch · LeRobot · OpenCV · YOLO · LiteRT · llama.cpp |
