@@ -54,26 +54,22 @@ Off-target tests, artifact rollout and rollback, hardware abstraction, and opera
 
 ### [Project Jetson](https://github.com/donghee-ai/project-jetson)
 
-**A local personal agent running on Jetson Orin NX.**
+**A local personal agent and activity tracker running on Jetson Orin NX.**
 
-The repository compares 13 model and quantization configurations. Memory, power, context-depth, and tool-calling measurements led to a Qwen3-8B setup used by Life Trainer, which combines cross-device activity rollups, a local MCP agent, Slack interaction, and systemd services.
+On-device measurements were used to choose a Qwen3-8B setup and connect it to Life Trainer and Slack.
 
 `Jetson Orin NX` `Qwen3-8B` `llama.cpp` `MCP` `SQLite` `Python`
-
-[Architecture & measurements →](https://github.com/donghee-ai/project-jetson#readme)
 
 </td>
 <td width="50%" valign="top">
 
 ### [Health Care Bot](https://github.com/donghee-ai/health_care_bot)
 
-**A health-coach robot for rep counting and PTZ person tracking on Arduino UNO Q.**
+**A rep-counting and PTZ person-tracking robot built on Arduino UNO Q.**
 
-MoveNet Thunder INT8 runs on the QRB2210 CPU. A two-axis ST3215 gimbal tracks the user, while a single Docker container and process also serve live video, telemetry, exercise controls, and a security mode.
+MoveNet Thunder INT8, gimbal control, and the web app run together in one Docker container.
 
 `Arduino UNO Q` `MoveNet` `LiteRT` `OpenCV` `Docker` `TypeScript`
-
-[Real-hardware demos →](https://github.com/donghee-ai/health_care_bot#readme)
 
 </td>
 </tr>
@@ -82,26 +78,22 @@ MoveNet Thunder INT8 runs on the QRB2210 CPU. A two-axis ST3215 gimbal tracks th
 
 ### [PAI](https://github.com/donghee-ai/PAI)
 
-**A team project in which a language command triggers a bimanual trash-gathering policy.**
+**A team project that uses language commands to control a bimanual trash-gathering robot.**
 
-The full pipeline connects YOLO perception, an LLM intent gate, and a LeRobot ACT policy over WebSocket and ZMQ. My contribution covers the language component, the `rollout_with_zmq_task` LeRobot adapter, and three-window orchestration. The Vision component is credited in the repository to [@yeounhyeok](https://github.com/yeounhyeok).
+I worked on the language component, LeRobot adapter, and orchestration; Vision was developed by [@yeounhyeok](https://github.com/yeounhyeok).
 
 `LeRobot` `ACT` `YOLO` `ZMQ` `SO-101` `Jetson AGX Thor`
-
-[Watch the real-hardware demo →](https://github.com/donghee-ai/PAI#readme)
 
 </td>
 <td width="50%" valign="top">
 
 ### [Job Radar](https://github.com/donghee-ai/job-radar)
 
-**A personal dashboard that collects openings from eight technology companies.**
+**A personal dashboard that collects job openings from eight technology companies.**
 
-Each source uses a documented collection method: Greenhouse, Ashby, Workday interception, internal APIs, or browser automation. The result is published as a static dashboard with GitHub Actions and Pages.
+Python crawlers update a static dashboard published with GitHub Actions and Pages.
 
 `Python` `Playwright` `Beautiful Soup` `GitHub Actions` `GitHub Pages`
-
-[Open the live dashboard →](https://donghee-ai.github.io/job-radar/)
 
 </td>
 </tr>
@@ -110,26 +102,22 @@ Each source uses a documented collection method: Greenhouse, Ashby, Workday inte
 
 ### [ROS 2 Release Rollout](https://github.com/donghee-ai/ros2-release-rollout)
 
-**A lightweight release system for deploying and rolling back prebuilt ROS 2 artifacts without rebuilding on the target.**
+**A small tool for deploying and rolling back prebuilt ROS 2 artifacts.**
 
-Packages a release with its manifest and SHA-256 checksums, validates the target environment, and changes the active version through a `current` symlink. The target uses Python's standard library and an installed ROS runtime; it does not rebuild the artifact.
+It verifies the release and switches a `current` symlink without rebuilding on the target PC.
 
 `ROS 2 Jazzy` `Python` `C++` `colcon` `SHA-256`
-
-[Follow the release pipeline →](https://github.com/donghee-ai/ros2-release-rollout#readme)
 
 </td>
 <td width="50%" valign="top">
 
 ### [nRF24L01+ Link](https://github.com/donghee-ai/nrf24l01-link)
 
-**A 1:N half-duplex radio link built directly on ATmega328P registers—without the RF24 library.**
+**A 1:N half-duplex nRF24L01+ link for ATmega328P without the RF24 library.**
 
-Implements a layered driver, a synchronized 100 ms slot schedule, and lockup recovery. A host-side radio simulator runs the firmware logic through 87 C checks and 10 Python tests without radio hardware.
+The driver and link logic can also be tested on a PC with the included simulator.
 
 `C` `ATmega328P` `nRF24L01+` `SPI` `TDD` `Off-target testing`
-
-[Explore the protocol design →](https://github.com/donghee-ai/nrf24l01-link#readme)
 
 </td>
 </tr>
