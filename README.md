@@ -2,9 +2,9 @@
 
 # DongHee Kim · 김동희
 
-### Physical AI Engineer
+### Physical AI · Edge AI · Robotics
 
-I build robots and edge AI systems that survive the jump from a demo to real hardware.
+I work on physical AI, on-device inference, and robotics software.
 
 `Vision · Language · Action` &nbsp;·&nbsp; `On-device inference` &nbsp;·&nbsp; `Robotics systems`
 
@@ -18,7 +18,7 @@ I build robots and edge AI systems that survive the jump from a demo to real har
 
 ## What I build
 
-My work sits where **robotics, on-device inference, and systems engineering** meet. I measure models on the target device, connect perception to action, and build the deployment, testing, and recovery paths needed to keep the whole system running.
+My projects cover **robotics, on-device inference, and systems engineering**. They include model measurements on edge devices, perception-to-action pipelines, deployment tools, and embedded communication software.
 
 <table>
 <tr>
@@ -26,21 +26,21 @@ My work sits where **robotics, on-device inference, and systems engineering** me
 
 **Physical AI**
 
-Vision-language-action pipelines, imitation learning, bimanual manipulation, and real-hardware integration.
+Vision-language-action pipelines, imitation learning, and bimanual robot integration.
 
 </td>
 <td width="33%" valign="top">
 
 **Edge AI**
 
-Measured model selection, CPU/GPU-constrained inference, privacy-first local agents, and device telemetry.
+Model benchmarking, CPU/GPU-constrained inference, local agents, and device telemetry.
 
 </td>
 <td width="33%" valign="top">
 
 **Reliable systems**
 
-Off-target tests, artifact rollout and rollback, hardware abstraction, observability, and reproducible operations.
+Off-target tests, artifact rollout and rollback, hardware abstraction, and operations tooling.
 
 </td>
 </tr>
@@ -54,9 +54,9 @@ Off-target tests, artifact rollout and rollback, hardware abstraction, observabi
 
 ### [Project Jetson](https://github.com/donghee-ai/project-jetson)
 
-**A privacy-safe, always-on personal agent running on Jetson Orin NX.**
+**A local personal agent running on Jetson Orin NX.**
 
-Benchmarked 13 model and quantization configurations, selected Qwen3-8B from real memory, power, context-depth, and tool-calling measurements, then built Life Trainer on top: cross-device activity rollups, a local MCP agent, Slack interaction, and systemd operations.
+The repository compares 13 model and quantization configurations. Memory, power, context-depth, and tool-calling measurements led to a Qwen3-8B setup used by Life Trainer, which combines cross-device activity rollups, a local MCP agent, Slack interaction, and systemd services.
 
 `Jetson Orin NX` `Qwen3-8B` `llama.cpp` `MCP` `SQLite` `Python`
 
@@ -67,9 +67,9 @@ Benchmarked 13 model and quantization configurations, selected Qwen3-8B from rea
 
 ### [Health Care Bot](https://github.com/donghee-ai/health_care_bot)
 
-**A health-coach robot running pose inference, rep counting, PTZ tracking, and a web app on one Arduino UNO Q.**
+**A health-coach robot for rep counting and PTZ person tracking on Arduino UNO Q.**
 
-MoveNet Thunder INT8 runs on the NPU-less QRB2210 CPU while a two-axis ST3215 gimbal keeps the user framed. The same container serves live video, telemetry, exercise controls, and a security mode.
+MoveNet Thunder INT8 runs on the QRB2210 CPU. A two-axis ST3215 gimbal tracks the user, while a single Docker container and process also serve live video, telemetry, exercise controls, and a security mode.
 
 `Arduino UNO Q` `MoveNet` `LiteRT` `OpenCV` `Docker` `TypeScript`
 
@@ -82,9 +82,9 @@ MoveNet Thunder INT8 runs on the NPU-less QRB2210 CPU while a two-axis ST3215 gi
 
 ### [PAI](https://github.com/donghee-ai/PAI)
 
-**A language-directed bimanual robot that sweeps desk trash into a dustpan.**
+**A team project in which a language command triggers a bimanual trash-gathering policy.**
 
-Integrated YOLO perception, an LLM intent gate, and a LeRobot ACT policy across WebSocket and ZMQ channels. Added camera ownership boundaries, policy adapters, orchestration scripts, and dry-run verification for the Jetson AGX Thor + dual SO-101 setup.
+The full pipeline connects YOLO perception, an LLM intent gate, and a LeRobot ACT policy over WebSocket and ZMQ. My contribution covers the language component, the `rollout_with_zmq_task` LeRobot adapter, and three-window orchestration. The Vision component is credited in the repository to [@yeounhyeok](https://github.com/yeounhyeok).
 
 `LeRobot` `ACT` `YOLO` `ZMQ` `SO-101` `Jetson AGX Thor`
 
@@ -95,9 +95,9 @@ Integrated YOLO perception, an LLM intent gate, and a LeRobot ACT policy across 
 
 ### [Job Radar](https://github.com/donghee-ai/job-radar)
 
-**A personal job tracker that unifies openings from eight technology companies.**
+**A personal dashboard that collects openings from eight technology companies.**
 
-Uses the right acquisition path for each source—Greenhouse, Ashby, Workday interception, internal APIs, or browser automation—then publishes a zero-cost static dashboard through GitHub Actions and Pages.
+Each source uses a documented collection method: Greenhouse, Ashby, Workday interception, internal APIs, or browser automation. The result is published as a static dashboard with GitHub Actions and Pages.
 
 `Python` `Playwright` `Beautiful Soup` `GitHub Actions` `GitHub Pages`
 
@@ -112,7 +112,7 @@ Uses the right acquisition path for each source—Greenhouse, Ashby, Workday int
 
 **A lightweight release system for deploying and rolling back prebuilt ROS 2 artifacts without rebuilding on the target.**
 
-Packages a self-contained release with its manifest and SHA-256 checksums, validates the target environment, and atomically switches the active version. The target needs only Python's standard library and its ROS runtime.
+Packages a release with its manifest and SHA-256 checksums, validates the target environment, and changes the active version through a `current` symlink. The target uses Python's standard library and an installed ROS runtime; it does not rebuild the artifact.
 
 `ROS 2 Jazzy` `Python` `C++` `colcon` `SHA-256`
 
@@ -125,7 +125,7 @@ Packages a self-contained release with its manifest and SHA-256 checksums, valid
 
 **A 1:N half-duplex radio link built directly on ATmega328P registers—without the RF24 library.**
 
-Implements a layered driver, synchronized 100 ms slot schedule, lockup recovery, and static-memory operation. A host-side radio simulator runs the same firmware logic through 87 C checks and 10 Python tests without hardware.
+Implements a layered driver, a synchronized 100 ms slot schedule, and lockup recovery. A host-side radio simulator runs the firmware logic through 87 C checks and 10 Python tests without radio hardware.
 
 `C` `ATmega328P` `nRF24L01+` `SPI` `TDD` `Off-target testing`
 
@@ -146,7 +146,7 @@ Implements a layered driver, synchronized 100 ms slot schedule, lockup recovery,
 
 ## Recognition
 
-**19th of 261 teams · Top 7%** — 2026 SW-Centered University Digital Competition, AI division<br>
+**19th of 261 teams** — 2026 SW중심대학 디지털 경진대회 AI부문<br>
 Macro F1 **0.7946** on AI Agent Behavior Inference · [Repository](https://github.com/donghee-ai/2026-sw-univ-competition-ai)
 
 ---
