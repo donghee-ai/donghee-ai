@@ -89,7 +89,7 @@ I worked on the language component, LeRobot adapter, and orchestration; Vision w
 
 ### [Job Radar](https://github.com/donghee-ai/job-radar)
 
-**A personal dashboard that collects job openings from eight technology companies.**
+**A personal dashboard that collects job openings from 25 companies across AI labs, Korean tech, and physical AI.**
 
 Python crawlers update a static dashboard published with GitHub Actions and Pages.
 
@@ -141,7 +141,7 @@ Macro F1 **0.7946** on AI Agent Behavior Inference · [Repository](https://githu
 
 <div align="center">
 
-**B.S. in AI Applications · Hansung University**
+**Undergraduate (3rd year), AI Applications · Hansung University**
 
 Open to conversations about Physical AI, edge inference, and robotics engineering.
 
